@@ -1,6 +1,6 @@
 package mindswap.academy.sims.houses.rooms;
 
-public class Living implements Room, RoomHandler {
+public class Living implements Room {
     @Override
     public void execute() {
 

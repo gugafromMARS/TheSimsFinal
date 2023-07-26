@@ -8,10 +8,13 @@ public class SimsChar implements Player{
     private House house;
     private int energyMaxLevel;
     private int energyLevel;
+    private double wallet;
+
     public SimsChar(Server.PlayerHandler ph) {
         this.ph = ph;
         energyMaxLevel = 100;
         energyLevel = 100;
+        wallet = 25000.0;
     }
 
     public Server.PlayerHandler getPh() {
