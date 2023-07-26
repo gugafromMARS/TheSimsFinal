@@ -8,11 +8,23 @@ public class Messages {
     public static final String BUY_HOUSE = "YOU BOUGHT YOUR HOUSE, CONGRATS!";
     public static final String SERVER_DEAD = "MAYBE SERVER IS DEAD!";
     public static final String FINISH_GAME = "YOU QUIT THE GAME!";
-    public static final String MENU = """
+    public static final String YOU_MOVED_TO = "YOU MOVED TO ";
+    public static final String CANT_MOVE = "YOU ALREADY ARE IN THAT ROOM";
+
+    public static final String NO_HOUSE = "YOU DON'T HAVE A HOUSE YET, BUY ONE!";
+    public static final String OPTIONS_MENU = """
             YOUR OPTIONS ARE :
             BUY,
             MOVE,
             DO,
-            QUIT!
+            QUIT
             """;
+    public static final String ROOMS_MENU = """
+            YOUR ROOMS ARE : 
+            LIVING,
+            KITCHEN,
+            BEDROOM,
+            OFFICE
+            """;
+
 }

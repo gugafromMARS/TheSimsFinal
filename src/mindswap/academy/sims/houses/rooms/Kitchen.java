@@ -1,6 +1,6 @@
 package mindswap.academy.sims.houses.rooms;
 
-public class Kitchen implements Room, RoomHandler {
+public class Kitchen implements Room {
 
 
     @Override

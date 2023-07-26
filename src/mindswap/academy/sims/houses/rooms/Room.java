@@ -1,7 +1,6 @@
 package mindswap.academy.sims.houses.rooms;
 
-public interface Room {
-
+public interface Room extends RoomHandler {
 
 
 }

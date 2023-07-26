@@ -2,6 +2,7 @@ package mindswap.academy.sims;
 
 import mindswap.academy.sims.handlers.HouseHandler;
 import mindswap.academy.sims.handlers.PlayerMenuHandler;
+import mindswap.academy.sims.handlers.RoomMenuHandler;
 import mindswap.academy.sims.handlers.UsernameHandler;
 import mindswap.academy.sims.messages.Messages;
 import mindswap.academy.sims.player.SimsChar;
@@ -14,7 +15,6 @@ public class SimsGame implements Game, Runnable{
     private UsernameHandler usernameHandler;
     private PlayerMenuHandler playerMenuHandler;
     private HouseHandler houseHandler;
-
     private boolean isPlaying = true;
 
     public SimsGame(Server.PlayerHandler playerHandler) {
@@ -46,7 +46,6 @@ public class SimsGame implements Game, Runnable{
         usernameHandler = new UsernameHandler(playerHandler);
         houseHandler = new HouseHandler(simsChar);
         playerMenuHandler = new PlayerMenuHandler(playerHandler, houseHandler, simsChar);
-
     }
 
     @Override

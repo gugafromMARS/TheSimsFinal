@@ -7,13 +7,12 @@ public enum RoomManager {
     LIVING(new Living()),
     OFFICE(new Office());
 
-    private final RoomHandler roomHandler;
+    private final Room room;
 
-    RoomManager(RoomHandler roomHandler) {
-        this.roomHandler = roomHandler;
+    RoomManager(Room room) {
+        this.room = room;
     }
-
-    public RoomHandler getRoomHandler() {
-        return roomHandler;
+    public Room getRoom() {
+        return room;
     }
 }
