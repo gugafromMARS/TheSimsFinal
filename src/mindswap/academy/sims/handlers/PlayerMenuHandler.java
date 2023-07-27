@@ -11,13 +11,15 @@ public class PlayerMenuHandler {
     private SimsChar simsChar;
     private HouseHandler houseHandler;
     private RoomMenuHandler roomMenuHandler;
+    private ActivityHandler activityHandler;
 
 
     public PlayerMenuHandler(Server.PlayerHandler playerHandler, HouseHandler houseHandler, SimsChar simsChar) {
         this.playerHandler = playerHandler;
         this.houseHandler = houseHandler;
         this.simsChar = simsChar;
-        roomMenuHandler = null;
+        roomMenuHandler = new RoomMenuHandler(simsChar);
+        activityHandler = new ActivityHandler(simsChar, roomMenuHandler);
     }
 
     public void playerMenu(){
@@ -25,17 +27,16 @@ public class PlayerMenuHandler {
         String option = playerHandler.readMessageFromPlayer();
         switch (option.trim()) {
             case "buy" -> {
-                Menu.BUY.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler);
-                roomMenuHandler = new RoomMenuHandler(simsChar);
+                Menu.BUY.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler);
                 playerMenu();
             }
             case "move" -> {
-                Menu.MOVE.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler);
+                Menu.MOVE.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler);
                 playerMenu();
             }
-            case "quit" -> Menu.QUIT.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler);
+            case "quit" -> Menu.QUIT.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler);
             default -> {
-                Menu.DO.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler);
+                Menu.DO.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler);
                 playerMenu();
             }
         }

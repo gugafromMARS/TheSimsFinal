@@ -10,8 +10,11 @@ public class Messages {
     public static final String FINISH_GAME = "YOU QUIT THE GAME!";
     public static final String YOU_MOVED_TO = "YOU MOVED TO ";
     public static final String CANT_MOVE = "YOU ALREADY ARE IN THAT ROOM";
-
     public static final String NO_HOUSE = "YOU DON'T HAVE A HOUSE YET, BUY ONE!";
+    public static final String SLEEPING = "IM SLEEPING zZzZz";
+    public static final String WORK = "I'M FULL FOCUS ON WORKING...";
+    public static final String COOKING = "I'M COOKING SOMETHING!";
+    public static final String TV = "I'M WATCHING A PROGRAM ABOUT DESIGN PATTERNS ON TV";
     public static final String OPTIONS_MENU = """
             YOUR OPTIONS ARE :
             BUY,
