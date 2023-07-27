@@ -11,17 +11,25 @@ public class Messages {
     public static final String YOU_MOVED_TO = "YOU MOVED TO ";
     public static final String CANT_MOVE = "YOU ALREADY ARE IN THAT ROOM";
     public static final String NO_HOUSE = "YOU DON'T HAVE A HOUSE YET, BUY ONE!";
+    public static final String NO_HOUSE_STATS = "YOU DON'T HAVE A HOUSE YET, YOU CAN'T SEE HOUSE STATS, BUY ONE!";
     public static final String SLEEPING = "IM SLEEPING zZzZz";
     public static final String WORK = "I'M FULL FOCUS ON WORKING...";
     public static final String COOKING = "I'M COOKING SOMETHING!";
     public static final String TV = "I'M WATCHING A PROGRAM ABOUT DESIGN PATTERNS ON TV";
     public static final String YOU_CANT_USE_ROOM = "YOU CAN'T USE THIS ROOM, NO NEED TO CLEAN IT FIRST!";
     public static final String YOU_NEED_TO_REST = "YOU DONT HAVE ANY ENERGY, YOU NEED TO TAKE A REST!";
+
+    public static final String STATS = """
+                    STATS 
+            """;
+    public static final String STATS_ENERGY = "YOUR ENERGY | ";
+    public static final String STATS_HOUSE = "YOUR HOUSE CLEANLINESS LEVEL | ";
     public static final String OPTIONS_MENU = """
             YOUR OPTIONS ARE :
             BUY,
             MOVE,
             DO,
+            STATS,
             QUIT
             """;
     public static final String ROOMS_MENU = """
@@ -31,5 +39,7 @@ public class Messages {
             BEDROOM,
             OFFICE
             """;
+
+
 
 }
