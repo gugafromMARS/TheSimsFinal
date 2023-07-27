@@ -7,6 +7,7 @@ public enum Menu {
     DO(new Do()),
     STATS(new Stats()),
     CLEAN(new Clean()),
+    WALLET(new Wallet()),
     QUIT(new Quit());
 
     private final MenuHandler menuHandler;
