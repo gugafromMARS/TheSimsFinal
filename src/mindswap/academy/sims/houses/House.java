@@ -51,4 +51,8 @@ public class House {
     public void decreaseCleanness(int levelOfDirt){
         levelOfCleanness -= levelOfDirt;
     }
+
+    public int getMaxOfCleanness() {
+        return maxOfCleanness;
+    }
 }

@@ -5,6 +5,7 @@ public enum Menu {
     BUY(new Buy()),
     MOVE(new Move()),
     DO(new Do()),
+    STATS(new Stats()),
     QUIT(new Quit());
 
     private final MenuHandler menuHandler;
