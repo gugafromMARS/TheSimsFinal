@@ -1,4 +1,5 @@
 package mindswap.academy.sims.player;
+import mindswap.academy.sims.exceptions.HouseDontExist;
 import mindswap.academy.sims.houses.House;
 import mindswap.academy.sims.server.Server;
 
@@ -29,8 +30,14 @@ public class SimsChar implements Player{
         this.house = house;
     }
 
-    public boolean haveHouse() {
-        return house != null;
+    public boolean haveHouse() throws HouseDontExist {
+        if (house != null) {
+            return true;
+        }
+        if(house == null) {
+            return false;
+        }
+        throw new HouseDontExist();
     }
     @Override
     public int getEnergyLevel() {

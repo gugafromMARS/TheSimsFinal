@@ -1,5 +1,6 @@
 package mindswap.academy.sims.menuhandler;
 
+import mindswap.academy.sims.exceptions.HouseDontExist;
 import mindswap.academy.sims.handlers.ActivityHandler;
 import mindswap.academy.sims.handlers.HouseHandler;
 import mindswap.academy.sims.handlers.RoomMenuHandler;
@@ -11,10 +12,15 @@ public class Move implements MenuHandler{
 
     @Override
     public void execute(SimsChar simsChar, HouseHandler houseHandler, RoomMenuHandler roomMenuHandler, ActivityHandler activityHandler, Maid maid) {
-        if(simsChar.haveHouse()){
-            roomMenuHandler.menu();
-            return;
+        try {
+            if(simsChar.haveHouse()){
+                roomMenuHandler.menu();
+                return;
+            }
+            simsChar.getPh().sendMessage(Messages.NO_HOUSE);
+        } catch (HouseDontExist e) {
+            System.out.println(e.getMessage());
         }
-        simsChar.getPh().sendMessage(Messages.NO_HOUSE);
+
     }
 }

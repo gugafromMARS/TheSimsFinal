@@ -53,6 +53,7 @@ public class Messages {
     public static final String CANT_MOVE = "YOU ALREADY ARE IN THAT ROOM";
     public static final String NO_HOUSE = "YOU DON'T HAVE A HOUSE YET, BUY ONE!";
     public static final String NO_HOUSE_STATS = "YOU DON'T HAVE A HOUSE YET, YOU CAN'T SEE HOUSE STATS, BUY ONE!";
+    public static final String HOUSE_NO_EXIST = "SOMETHING WRONG WITH HOUSE!";
     public static final String SLEEPING = "IM SLEEPING zZzZz";
     public static final String WORK = "I'M FULL FOCUS ON WORKING...";
     public static final String COOKING = "I'M COOKING SOMETHING!";
@@ -60,9 +61,7 @@ public class Messages {
     public static final String YOU_CANT_USE_ROOM = "YOU CAN'T USE THIS ROOM, NO NEED TO CLEAN IT FIRST!";
     public static final String YOU_NEED_TO_REST = "YOU DONT HAVE ANY ENERGY, YOU NEED TO TAKE A REST!";
     public static final String HOMELESS = "I SOLD MY HOUSE AND NOW I DON'T HAVE ONE!";
-    public static final String STATS = """
-                    STATS 
-            """;
+    public static final String STATS = "STATS";
     public static final String STATS_ENERGY = "YOUR ENERGY | ";
     public static final String STATS_HOUSE = "YOUR HOUSE CLEANLINESS LEVEL | ";
 public static final String MAID_CLEANING = """
