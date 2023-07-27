@@ -55,6 +55,7 @@ public class Messages {
     public static final String NO_HOUSE_STATS = "YOU DON'T HAVE A HOUSE YET, YOU CAN'T SEE HOUSE STATS, BUY ONE!";
     public static final String HOUSE_NO_EXIST = "SOMETHING WRONG WITH HOUSE!";
     public static final String DONT_HAVE_HOUSE = "CAN'T CLEAN BECAUSE MAYBE HOUSE IS NULL!";
+    public static final String NO_MONEY = "YOU DON'T HAVE MONEY TO PAY, YOU NEED TO WORK FIRST!";
     public static final String SLEEPING = "IM SLEEPING zZzZz";
     public static final String WORK = "I'M FULL FOCUS ON WORKING...";
     public static final String COOKING = "I'M COOKING SOMETHING!";

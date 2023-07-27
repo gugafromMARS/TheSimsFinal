@@ -17,12 +17,16 @@ public class Maid {
 
     public void cleanHouseFor(SimsChar simsChar) {
         try {
-            simsChar.getHouse().setLevelOfCleanness(simsChar.getHouse().getMaxOfCleanness());
-            for (Room room: simsChar.getHouse().getRooms()) {
-                room.setLevelOfCleanliness(100);
+            if(simsChar.getWallet() >= 500) {
+                simsChar.getHouse().setLevelOfCleanness(simsChar.getHouse().getMaxOfCleanness());
+                for (Room room: simsChar.getHouse().getRooms()) {
+                    room.setLevelOfCleanliness(100);
+                }
+                simsChar.decreaseMoney(price);
+                simsChar.getPh().sendMessage(Messages.MAID_CLEANING);
+                return;
             }
-            simsChar.decreaseMoney(price);
-            simsChar.getPh().sendMessage(Messages.MAID_CLEANING);
+            simsChar.getPh().sendMessage(Messages.NO_MONEY);
         } catch (DontHaveHouse e) {
             System.out.println(e.getMessage());
         }

@@ -36,7 +36,7 @@ public class HouseHandler {
         return false;
     }
 
-    public void sellHouse() {
+    public void sell() {
         try {
             if(simsChar.haveHouse()){
                 simsChar.getPh().sendMessage(Messages.HOMELESS);
