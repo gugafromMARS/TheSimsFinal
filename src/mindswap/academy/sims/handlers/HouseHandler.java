@@ -1,5 +1,6 @@
 package mindswap.academy.sims.handlers;
 
+import mindswap.academy.sims.exceptions.DontHaveHouse;
 import mindswap.academy.sims.exceptions.HouseDontExist;
 import mindswap.academy.sims.houses.House;
 import mindswap.academy.sims.messages.Messages;
@@ -45,7 +46,7 @@ public class HouseHandler {
                 return;
             }
             simsChar.getPh().sendMessage(Messages.NO_HOUSE);
-            } catch (HouseDontExist hde) {
+            } catch (HouseDontExist | DontHaveHouse hde) {
             System.out.println(hde.getMessage());
         }
     }
