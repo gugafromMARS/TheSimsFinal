@@ -10,6 +10,6 @@ public class Sell implements MenuHandler {
 
     @Override
     public void execute(SimsChar simsChar, HouseHandler houseHandler, RoomMenuHandler roomMenuHandler, ActivityHandler activityHandler, Maid maid) {
-        houseHandler.sellHouse();
+        houseHandler.sell();
     }
 }
