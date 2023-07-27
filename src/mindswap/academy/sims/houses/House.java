@@ -17,8 +17,8 @@ public class House {
     public House() {
         occupied = false;
         price = 15000;
-        maxOfCleanness = 100;
-        levelOfCleanness = 100;
+        maxOfCleanness = 400;
+        levelOfCleanness = 400;
         buildRooms();
     }
     private void buildRooms() {
@@ -38,5 +38,17 @@ public class House {
 
     public List<Room> getRooms() {
         return rooms;
+    }
+
+    public int getLevelOfCleanness() {
+        return levelOfCleanness;
+    }
+
+    public void setLevelOfCleanness(int levelOfCleanness) {
+        this.levelOfCleanness = levelOfCleanness;
+    }
+
+    public void decreaseCleanness(int levelOfDirt){
+        levelOfCleanness -= levelOfDirt;
     }
 }

@@ -15,6 +15,8 @@ public class Messages {
     public static final String WORK = "I'M FULL FOCUS ON WORKING...";
     public static final String COOKING = "I'M COOKING SOMETHING!";
     public static final String TV = "I'M WATCHING A PROGRAM ABOUT DESIGN PATTERNS ON TV";
+    public static final String YOU_CANT_USE_ROOM = "YOU CAN'T USE THIS ROOM, NO NEED TO CLEAN IT FIRST!";
+    public static final String YOU_NEED_TO_REST = "YOU DONT HAVE ANY ENERGY, YOU NEED TO TAKE A REST!";
     public static final String OPTIONS_MENU = """
             YOUR OPTIONS ARE :
             BUY,
