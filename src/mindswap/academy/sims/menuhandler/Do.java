@@ -1,5 +1,6 @@
 package mindswap.academy.sims.menuhandler;
 
+import mindswap.academy.sims.exceptions.HouseDontExist;
 import mindswap.academy.sims.handlers.ActivityHandler;
 import mindswap.academy.sims.handlers.HouseHandler;
 import mindswap.academy.sims.handlers.RoomMenuHandler;
@@ -10,10 +11,15 @@ import mindswap.academy.sims.player.SimsChar;
 public class Do implements MenuHandler{
     @Override
     public void execute(SimsChar simsChar, HouseHandler houseHandler, RoomMenuHandler roomMenuHandler, ActivityHandler activityHandler, Maid maid) {
-        if(simsChar.haveHouse()){
-            activityHandler.doTask();
-            return;
-        }
+        try {
+            if(simsChar.haveHouse()){
+                activityHandler.doTask();
+                return;
+            }
             simsChar.getPh().sendMessage(Messages.NO_HOUSE);
+        } catch (HouseDontExist e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 }
