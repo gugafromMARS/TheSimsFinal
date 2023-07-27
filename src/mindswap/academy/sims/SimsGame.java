@@ -4,6 +4,7 @@ import mindswap.academy.sims.handlers.HouseHandler;
 import mindswap.academy.sims.handlers.PlayerMenuHandler;
 import mindswap.academy.sims.handlers.RoomMenuHandler;
 import mindswap.academy.sims.handlers.UsernameHandler;
+import mindswap.academy.sims.maid.Maid;
 import mindswap.academy.sims.messages.Messages;
 import mindswap.academy.sims.player.SimsChar;
 import mindswap.academy.sims.server.Server;
@@ -15,12 +16,14 @@ public class SimsGame implements Game, Runnable{
     private UsernameHandler usernameHandler;
     private PlayerMenuHandler playerMenuHandler;
     private HouseHandler houseHandler;
+    private Maid maid;
     private boolean isPlaying = true;
 
     public SimsGame(Server.PlayerHandler playerHandler) {
         this.playerHandler = playerHandler;
         simsChar = null;
         usernameHandler = null;
+        maid = new Maid();
     }
 
     @Override
@@ -45,7 +48,7 @@ public class SimsGame implements Game, Runnable{
     private void startHandlers() {
         usernameHandler = new UsernameHandler(playerHandler);
         houseHandler = new HouseHandler(simsChar);
-        playerMenuHandler = new PlayerMenuHandler(playerHandler, houseHandler, simsChar);
+        playerMenuHandler = new PlayerMenuHandler(playerHandler, houseHandler, simsChar, maid);
     }
 
     @Override

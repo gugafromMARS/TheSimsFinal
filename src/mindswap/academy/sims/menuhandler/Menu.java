@@ -6,6 +6,7 @@ public enum Menu {
     MOVE(new Move()),
     DO(new Do()),
     STATS(new Stats()),
+    CLEAN(new Clean()),
     QUIT(new Quit());
 
     private final MenuHandler menuHandler;
