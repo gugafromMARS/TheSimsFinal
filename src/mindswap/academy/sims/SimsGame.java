@@ -35,7 +35,6 @@ public class SimsGame implements Game, Runnable{
             playerMenuHandler.playerMenu();
             isPlaying = false;
         }
-        finishGame();
     }
     @Override
     public void greetPlayer() {
