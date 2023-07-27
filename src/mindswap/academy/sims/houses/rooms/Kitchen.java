@@ -3,16 +3,8 @@ package mindswap.academy.sims.houses.rooms;
 import mindswap.academy.sims.messages.Messages;
 import mindswap.academy.sims.player.SimsChar;
 
-public class Kitchen implements Room {
+public class Kitchen extends Room {
 
-
-    private int maxLevelOfCleanliness;
-    private int levelOfCleanliness;
-
-    public Kitchen() {
-        maxLevelOfCleanliness = 100;
-        levelOfCleanliness = 100;
-    }
 
     @Override
     public void execute(SimsChar simsChar) {
@@ -30,23 +22,4 @@ public class Kitchen implements Room {
         simsChar.getPh().sendMessage(Messages.YOU_NEED_TO_REST);
     }
 
-    @Override
-    public void setLevelOfCleanliness(int cleanliness) {
-        levelOfCleanliness = cleanliness;
-    }
-
-    @Override
-    public int getLevelOfCleanliness() {
-        return levelOfCleanliness;
-    }
-
-    @Override
-    public void decreaseCleanness(int levelOfDirt) {
-        levelOfCleanliness -= levelOfDirt;
-    }
-
-    @Override
-    public void cleanRoom() {
-        setLevelOfCleanliness(maxLevelOfCleanliness);
-    }
 }
