@@ -3,6 +3,7 @@ package mindswap.academy.sims.menuhandler;
 public enum Menu {
 
     BUY(new Buy()),
+    SELL(new Sell()),
     MOVE(new Move()),
     DO(new Do()),
     STATS(new Stats()),

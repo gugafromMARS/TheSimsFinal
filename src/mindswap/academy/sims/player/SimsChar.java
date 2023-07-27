@@ -70,4 +70,6 @@ public class SimsChar implements Player{
     public void decreaseMoney(double money){
         wallet -= money;
     }
+
+
 }
