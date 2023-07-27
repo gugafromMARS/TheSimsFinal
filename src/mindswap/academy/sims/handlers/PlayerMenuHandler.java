@@ -32,6 +32,10 @@ public class PlayerMenuHandler {
                 Menu.BUY.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
                 playerMenu();
             }
+            case "SELL" -> {
+                Menu.SELL.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
+                playerMenu();
+            }
             case "MOVE" -> {
                 Menu.MOVE.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
                 playerMenu();
