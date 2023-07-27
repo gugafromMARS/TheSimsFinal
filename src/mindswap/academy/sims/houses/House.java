@@ -55,4 +55,8 @@ public class House {
     public int getMaxOfCleanness() {
         return maxOfCleanness;
     }
+
+    public double getPrice() {
+        return price;
+    }
 }

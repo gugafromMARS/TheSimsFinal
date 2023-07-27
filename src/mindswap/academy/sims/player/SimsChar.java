@@ -58,4 +58,16 @@ public class SimsChar implements Player{
         }
         this.energyLevel += energy;
     }
+
+    public double getWallet() {
+        return wallet;
+    }
+
+    public void increaseMoney(double money){
+        wallet += money;
+    }
+
+    public void decreaseMoney(double money){
+        wallet -= money;
+    }
 }
