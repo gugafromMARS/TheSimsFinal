@@ -1,5 +1,6 @@
 package mindswap.academy.sims.menuhandler;
 
+import mindswap.academy.sims.exceptions.DontHaveHouse;
 import mindswap.academy.sims.exceptions.HouseDontExist;
 import mindswap.academy.sims.handlers.ActivityHandler;
 import mindswap.academy.sims.handlers.HouseHandler;
@@ -28,7 +29,7 @@ public class Stats implements MenuHandler{
             }
             simsChar.getPh().sendMessage("-".repeat(10) + " " + Messages.STATS + " " + "-".repeat(12) +"\n" + energyStats +"\n");
             simsChar.getPh().sendMessage(Messages.NO_HOUSE_STATS);
-        } catch (HouseDontExist e) {
+        } catch (HouseDontExist | DontHaveHouse e) {
             System.out.println(e.getMessage());
         }
     }

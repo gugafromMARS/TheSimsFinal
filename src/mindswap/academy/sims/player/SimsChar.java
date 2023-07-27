@@ -1,4 +1,5 @@
 package mindswap.academy.sims.player;
+import mindswap.academy.sims.exceptions.DontHaveHouse;
 import mindswap.academy.sims.exceptions.HouseDontExist;
 import mindswap.academy.sims.houses.House;
 import mindswap.academy.sims.server.Server;
@@ -22,8 +23,11 @@ public class SimsChar implements Player{
         return ph;
     }
 
-    public House getHouse() {
-        return house;
+    public House getHouse() throws DontHaveHouse {
+        if(house != null){
+            return house;
+        }
+        throw new DontHaveHouse();
     }
 
     public void setHouse(House house) {
