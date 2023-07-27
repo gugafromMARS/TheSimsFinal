@@ -27,24 +27,24 @@ public class PlayerMenuHandler {
     public void playerMenu(){
         playerHandler.sendMessage(playerHandler.getUsername() + " " + Messages.OPTIONS_MENU);
         String option = playerHandler.readMessageFromPlayer();
-        switch (option.trim()) {
-            case "buy" -> {
+        switch (option.trim().toUpperCase()) {
+            case "BUY" -> {
                 Menu.BUY.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
                 playerMenu();
             }
-            case "move" -> {
+            case "MOVE" -> {
                 Menu.MOVE.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
                 playerMenu();
             }
-            case "stats" ->{
+            case "STATS" ->{
                 Menu.STATS.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
                 playerMenu();
             }
-            case "clean"->{
+            case "CLEAN"->{
                 Menu.CLEAN.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
                 playerMenu();
             }
-            case "quit" -> Menu.QUIT.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
+            case "QUIT" -> Menu.QUIT.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
             default -> {
                 Menu.DO.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
                 playerMenu();

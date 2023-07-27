@@ -3,7 +3,25 @@ package mindswap.academy.sims.messages;
 public class Messages {
 
     public static final String CREATE_USERNAME = "INSERT YOUR USERNAME: ";
-    public static final String WELCOME = "WELCOME TO SIMS!";
+    public static final String WELCOME = """
+                        
+             __      __  ___   _       ___    ___    __  __   ___                                  \s
+             \\ \\    / / | __| | |     / __|  / _ \\  |  \\/  | | __|                                 \s
+              \\ \\/\\/ /  | _|  | |__  | (__  | (_) | | |\\/| | | _|                                  \s
+               \\_/\\_/   |___| |____|  \\___|  \\___/  |_|  |_| |___|                                 \s
+                                                                                                   \s
+                                  _____    ___                                                     \s
+                                 |_   _|  / _ \\                                                    \s
+                                   | |   | (_) |                                                   \s
+                                   |_|    \\___/                                                    \s
+                                                                                                   \s
+                            ___   ___   __  __   ___                                               \s
+                           / __| |_ _| |  \\/  | / __|                                              \s
+                           \\__ \\  | |  | |\\/| | \\__ \\                                              \s
+                           |___/ |___| |_|  |_| |___/                                              \s
+                                                                                                   \s
+                        
+            """;
     public static final String ALREADY_HAVE_HOUSE = "YOU ALREADY HAVE A HOUSE!";
     public static final String BUY_HOUSE = """
                         
