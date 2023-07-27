@@ -21,10 +21,10 @@ public class Stats implements MenuHandler{
             String houseStats = Messages.STATS_HOUSE + "#".repeat(convertTo100perCent / 10) + " | " + convertTo100perCent +"%";
 
             simsChar.getPh().sendMessage(Messages.STATS+"\n" + energyStats);
-            simsChar.getPh().sendMessage(houseStats +"\n" + "-----------------------------------");
+            simsChar.getPh().sendMessage(houseStats +"\n" + "-".repeat(30));
             return;
         }
-        simsChar.getPh().sendMessage(Messages.STATS +"\n" + energyStats +"\n" + "-----------------------------------");
+        simsChar.getPh().sendMessage(Messages.STATS +"\n" + energyStats +"\n" + "-".repeat(30));
         simsChar.getPh().sendMessage(Messages.NO_HOUSE_STATS);
     }
 }

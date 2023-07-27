@@ -25,7 +25,7 @@ public class PlayerMenuHandler {
     }
 
     public void playerMenu(){
-        playerHandler.sendMessage(playerHandler.getUsername() + " " + Messages.OPTIONS_MENU);
+        playerHandler.sendMessage("-".repeat(30) +"\n" +playerHandler.getUsername() + " " + Messages.OPTIONS_MENU);
         String option = playerHandler.readMessageFromPlayer();
         switch (option.trim().toUpperCase()) {
             case "BUY" -> {
@@ -42,6 +42,10 @@ public class PlayerMenuHandler {
             }
             case "CLEAN"->{
                 Menu.CLEAN.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
+                playerMenu();
+            }
+            case "WALLET"->{
+                Menu.WALLET.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);
                 playerMenu();
             }
             case "QUIT" -> Menu.QUIT.getMenuHandler().execute(simsChar, houseHandler, roomMenuHandler, activityHandler, maid);

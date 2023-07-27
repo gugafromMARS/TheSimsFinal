@@ -59,7 +59,6 @@ public class Messages {
     public static final String TV = "I'M WATCHING A PROGRAM ABOUT DESIGN PATTERNS ON TV";
     public static final String YOU_CANT_USE_ROOM = "YOU CAN'T USE THIS ROOM, NO NEED TO CLEAN IT FIRST!";
     public static final String YOU_NEED_TO_REST = "YOU DONT HAVE ANY ENERGY, YOU NEED TO TAKE A REST!";
-
     public static final String STATS = """
                     STATS 
             """;
@@ -99,19 +98,22 @@ public static final String MAID_CLEANING = """
         """;
     public static final String OPTIONS_MENU = """
             YOUR OPTIONS ARE :
-            BUY,
-            MOVE,
-            DO,
-            STATS,
-            CLEAN,
-            QUIT
+                              BUY,
+                              MOVE,
+                              DO,
+                              STATS,
+                              CLEAN,
+                              WALLET,
+                              QUIT
+            --------------------------------
             """;
     public static final String ROOMS_MENU = """
             YOUR ROOMS ARE : 
-            LIVING,
-            KITCHEN,
-            BEDROOM,
-            OFFICE
+                            LIVING,
+                            KITCHEN,
+                            BEDROOM,
+                            OFFICE
+            ---------------------------------
             """;
 
 
