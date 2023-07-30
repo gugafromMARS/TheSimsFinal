@@ -115,4 +115,6 @@ fabric.properties
 hs_err_pid*
 replay_pid*
 
+#iml
+TheSimsFinal.iml
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,java

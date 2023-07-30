@@ -1,6 +1,6 @@
 package mindswap.academy.sims.client;
 
-import mindswap.academy.sims.messages.Messages;
+import mindswap.academy.sims.game.messages.Messages;
 
 import java.io.*;
 import java.net.Socket;

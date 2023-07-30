@@ -13,9 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Server {
-
     private ServerSocket serverSocket;
-    private PlayerHandler playerHandler;
 
     public static void main(String[] args) {
         Server server = new Server();
@@ -45,73 +43,8 @@ public class Server {
     }
 
     private void managePlayerHandler(Socket clientSocket){
-        playerHandler = new PlayerHandler(clientSocket);
+        PlayerHandler playerHandler = new PlayerHandler(clientSocket);
         ExecutorService service = Executors.newCachedThreadPool();
-        service.submit(playerHandler);
         service.submit(new SimsGame(playerHandler));
-        playerHandler = null;
     }
-
-    public class PlayerHandler implements Runnable {
-
-        private Socket clientSocket;
-        private BufferedReader in;
-        private PrintWriter out;
-        private String username;
-        private boolean isRunning = true;
-
-        public PlayerHandler(Socket clientSocket) {
-            this.clientSocket = clientSocket;
-            startBuffers();
-        }
-
-        private void startBuffers() {
-            try {
-                in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                out = new PrintWriter(clientSocket.getOutputStream(), true);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        public void sendMessage(String message) {
-            out.println(message);
-        }
-
-        public String readMessageFromPlayer() {
-            String message = null;
-            try {
-                message = in.readLine();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            return message;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getUsername() {
-            return username;
-        }
-
-        @Override
-        public void run() {
-            while (isRunning){
-
-            }
-        }
-
-        public void closeConnection() {
-            try {
-                clientSocket.close();
-                isRunning = false;
-                System.out.println("Client disconnected!");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
-
 }
