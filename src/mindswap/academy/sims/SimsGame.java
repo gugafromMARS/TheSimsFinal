@@ -1,17 +1,17 @@
 package mindswap.academy.sims;
 
-import mindswap.academy.sims.handlers.HouseHandler;
-import mindswap.academy.sims.handlers.PlayerMenuHandler;
-import mindswap.academy.sims.handlers.RoomMenuHandler;
-import mindswap.academy.sims.handlers.UsernameHandler;
-import mindswap.academy.sims.maid.Maid;
-import mindswap.academy.sims.messages.Messages;
-import mindswap.academy.sims.player.SimsChar;
+import mindswap.academy.sims.game.handlers.HouseHandler;
+import mindswap.academy.sims.game.handlers.PlayerMenuHandler;
+import mindswap.academy.sims.game.handlers.UsernameHandler;
+import mindswap.academy.sims.game.maid.Maid;
+import mindswap.academy.sims.game.messages.Messages;
+import mindswap.academy.sims.game.player.SimsChar;
+import mindswap.academy.sims.server.PlayerHandler;
 import mindswap.academy.sims.server.Server;
 
 public class SimsGame implements Game, Runnable{
 
-    private Server.PlayerHandler playerHandler;
+    private PlayerHandler playerHandler;
     private SimsChar simsChar;
     private UsernameHandler usernameHandler;
     private PlayerMenuHandler playerMenuHandler;
@@ -19,7 +19,7 @@ public class SimsGame implements Game, Runnable{
     private Maid maid;
     private boolean isPlaying = true;
 
-    public SimsGame(Server.PlayerHandler playerHandler) {
+    public SimsGame(PlayerHandler playerHandler) {
         this.playerHandler = playerHandler;
         simsChar = null;
         usernameHandler = null;
@@ -30,7 +30,10 @@ public class SimsGame implements Game, Runnable{
     public void startGame() {
         greetPlayer();
         createUsername();
+        play();
+    }
 
+    private void play(){
         while (isPlaying) {
             playerMenuHandler.playerMenu();
             isPlaying = false;
