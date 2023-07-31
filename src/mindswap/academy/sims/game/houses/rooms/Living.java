@@ -1,11 +1,17 @@
 package mindswap.academy.sims.game.houses.rooms;
 
 import mindswap.academy.sims.game.exceptions.DontHaveHouseException;
+import mindswap.academy.sims.game.messages.MessageHandler;
 import mindswap.academy.sims.game.messages.Messages;
 import mindswap.academy.sims.game.player.SimsChar;
 
 public class Living extends Room {
 
+    private MessageHandler messageHandler;
+
+    public Living() {
+        messageHandler = new MessageHandler();
+    }
 
     @Override
     public void execute(SimsChar simsChar) {
@@ -13,7 +19,7 @@ public class Living extends Room {
             if(simsChar.getEnergyLevel() >= 20){
                 if(simsChar.getHouse().getLevelOfCleanness() >= 100 && getLevelOfCleanliness() >= 20){
                     simsChar.consumeEnergy(20);
-                    simsChar.getPlayerHandler().sendMessage(Messages.TV);
+                    simsChar.getPlayerHandler().sendMessage(messageHandler.manageMessage("src/mindswap/academy/sims/game/messages/resources/tv.txt"));
                     decreaseCleanness(50);
                     simsChar.getHouse().decreaseCleanness(20);
                     return;

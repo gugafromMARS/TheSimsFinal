@@ -4,6 +4,7 @@ import mindswap.academy.sims.game.handlers.HouseHandler;
 import mindswap.academy.sims.game.handlers.PlayerMenuHandler;
 import mindswap.academy.sims.game.handlers.UsernameHandler;
 import mindswap.academy.sims.game.maid.Maid;
+import mindswap.academy.sims.game.messages.MessageHandler;
 import mindswap.academy.sims.game.messages.Messages;
 import mindswap.academy.sims.game.player.SimsChar;
 import mindswap.academy.sims.server.PlayerHandler;
@@ -11,6 +12,7 @@ import mindswap.academy.sims.server.Server;
 
 public class SimsGame implements Game, Runnable{
 
+    private MessageHandler messageHandler;
     private PlayerHandler playerHandler;
     private SimsChar simsChar;
     private UsernameHandler usernameHandler;
@@ -41,7 +43,7 @@ public class SimsGame implements Game, Runnable{
     }
     @Override
     public void greetPlayer() {
-        playerHandler.sendMessage(Messages.WELCOME);
+        playerHandler.sendMessage(messageHandler.manageMessage("src/mindswap/academy/sims/game/messages/resources/welcome.txt"));
     }
     private void createUsername() {
         usernameHandler.createUsername();
@@ -51,6 +53,7 @@ public class SimsGame implements Game, Runnable{
         usernameHandler = new UsernameHandler(playerHandler);
         houseHandler = new HouseHandler(simsChar);
         playerMenuHandler = new PlayerMenuHandler(playerHandler, houseHandler, simsChar, maid);
+        messageHandler = new MessageHandler();
     }
 
     @Override
