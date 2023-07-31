@@ -17,7 +17,6 @@ public class Maid {
         price = 500.0;
         messageHandler = new MessageHandler();
     }
-
     public void cleanHouseFor(SimsChar simsChar) {
         try {
             if(simsChar.getWallet() >= 500) {
@@ -26,7 +25,7 @@ public class Maid {
                     room.setLevelOfCleanliness(100);
                 }
                 simsChar.decreaseMoney(price);
-                simsChar.getPlayerHandler().sendMessage(messageHandler.manageMessage("maid.txt"));
+                simsChar.getPlayerHandler().sendMessage(messageHandler.manageMessage("src/mindswap/academy/sims/game/messages/resources/maid.txt"));
                 return;
             }
             simsChar.getPlayerHandler().sendMessage(Messages.NO_MONEY);
