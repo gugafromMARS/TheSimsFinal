@@ -17,7 +17,6 @@ public class Maid {
         price = 500.0;
         messageHandler = new MessageHandler();
     }
-
     public void cleanHouseFor(SimsChar simsChar) {
         try {
             if(simsChar.getWallet() >= 500) {
