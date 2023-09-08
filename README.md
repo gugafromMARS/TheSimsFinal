@@ -66,6 +66,6 @@ In this game you have several options :
 
 **gugafromMars**
 
-[Github] (https://github.com/gugafromMARS)
+[Github-gugafromMars](https://github.com/gugafromMARS)
 
 Thanks to visiting and happy coding!
